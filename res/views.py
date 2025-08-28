@@ -1,0 +1,37 @@
+from django.shortcuts import render
+from django.views.generic import TemplateView
+from django.views import View
+
+
+class HomeView(View):
+    def get(self, request):
+        return render(request, 'res/index.html')
+
+
+class AboutView(View):
+    def get(self, request):
+        return render(request, 'res/about.html')
+
+class ServiceView(View):
+    def get(self, request):
+        return render(request, 'res/service.html')
+
+class MenuView(View):
+    def get(self, request):
+        return render(request, 'res/menu.html')
+
+class TestimonialView(View):
+    def get(self, request):
+        return render(request, 'res/testimonial.html')
+
+class BookingView(View):
+    def get(self, request):
+        return render(request, 'res/booking.html')
+
+class TeamView(View):
+    def get(self, request):
+        return render(request, 'res/team.html')
+
+class ContactView(View):
+    def get(self, request):
+        return render(request, 'res/contact.html')
