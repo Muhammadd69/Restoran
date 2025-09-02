@@ -1,23 +1,18 @@
 from pathlib import Path
 from environs import Env
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-# from dotenv import load_dotenv
-# import os
-#
-# load_dotenv()
+from pathlib import Path
+
 env = Env()
 env.read_env()
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
 
 SECRET_KEY = 'django-insecure-^ba0w0+woy^iw@n13nc-e@(*2by**)uw1i5t5b%(px19b3q4i^'
 
 DEBUG = env.bool('DEBUG', default=False)
 
-ALLOWED_HOSTS = ["*"]
 
+ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -27,6 +22,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sign',
+    'res',
+
 ]
 
 MIDDLEWARE = [
@@ -58,7 +55,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
@@ -68,7 +64,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -88,7 +83,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
@@ -99,7 +93,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
@@ -113,6 +106,7 @@ MEDIA_URL = 'media/'
 MEDIAFILES_ROOT = [
     BASE_DIR / 'media/',
 ]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
