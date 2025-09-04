@@ -50,3 +50,10 @@ class TeamView(View):
 class ContactView(View):
     def get(self, request):
         return render(request, 'res/contact.html')
+
+    def post(self, request):
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        name = request.POST.get('name')
+        contact = request.POST.get('contact')
